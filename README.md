@@ -1,5 +1,9 @@
 # NexTech Solutions - Full Stack MERN Project
 
+Deployment
+The project is deployed with the frontend hosted on Netlify and the backend hosted on Render.
+Live Project URL: https://harsh-gehlot-edurech.netlify.app/
+
 A professional corporate website for NexTech Solutions built with React (Frontend) and Node.js/Express (Backend) with MongoDB database.
 
 ## 📋 Project Overview
@@ -394,19 +398,8 @@ Each service includes:
 - ✅ MongoDB database integration
 - ✅ CORS enabled for frontend-backend communication
 
-## 🚀 Deployment
 
-### Backend Deployment
-1. Set environment variables on hosting platform
-2. Update CORS settings if needed
-3. Deploy to platforms like Heroku, Railway, or Render
 
-### Frontend Deployment
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to platforms like:
-   - Vercel
-   - Netlify
-   - GitHub Pages
 
 ## 📄 License
 
