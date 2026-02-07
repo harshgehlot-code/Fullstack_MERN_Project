@@ -14,7 +14,11 @@ import errorHandler from "./middlewares/error.middleware.js";
 const app = express();
 
 // Enable CORS - allows frontend to make requests to backend
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "*", // later replace with Netlify domain
+  credentials: true
+}));
 
 // Parse JSON request bodies
 app.use(express.json());
