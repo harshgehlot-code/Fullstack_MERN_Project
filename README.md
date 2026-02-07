@@ -44,20 +44,17 @@ NexTech_MERN_Project_fullstack/
 │   │   ├── controllers/
 │   │   │   ├── auth.controllers.js   # Authentication logic
 │   │   │   ├── contact.controllers.js # Contact form logic
-│   │   │   ├── job.controllers.js    # Job CRUD operations
 │   │   │   └── application.controllers.js # Job application logic
 │   │   ├── middlewares/
 │   │   │   ├── auth.middlewares.js   # JWT authentication middleware
 │   │   │   └── error.middleware.js   # Error handling middleware
 │   │   ├── models/
-│   │   │   ├── User.model.js         # User/Admin schema
+│   │   │   ├── User.model.js         # User
 │   │   │   ├── Contact.model.js      # Contact form schema
-│   │   │   ├── Job.model.js          # Job posting schema
 │   │   │   └── JobApplication.model.js # Job application schema
 │   │   ├── routes/
 │   │   │   ├── auth.routes.js         # Authentication routes
 │   │   │   ├── contact.routes.js     # Contact form routes
-│   │   │   ├── job.routes.js         # Job routes
 │   │   │   └── application.routes.js # Application routes
 │   │   └── utils/
 │   │       ├── jwt.js                # JWT token utilities
@@ -95,10 +92,7 @@ NexTech_MERN_Project_fullstack/
 │   │   ├── services/
 │   │   │   ├── api.js                # Axios instance
 │   │   │   ├── contactService.js     # Contact API calls
-│   │   │   ├── jobService.js         # Job API calls
 │   │   │   └── applicationService.js # Application API calls
-│   │   ├── hooks/
-│   │   │   └── useFetch.js          # Custom fetch hook
 │   │   └── utils/
 │   │       └── constants.js         # App constants
 │   ├── package.json
@@ -169,13 +163,13 @@ http://localhost:5000/api
 
 ### Authentication APIs
 
-#### Admin Login
+#### User Login
 - **Endpoint:** `POST /api/auth/login`
-- **Description:** Authenticate admin user
+- **Description:** Authenticate user
 - **Request Body:**
 ```json
 {
-  "email": "admin@nextech.com",
+  "email": "user@nextech.com",
   "password": "password123"
 }
 ```
@@ -185,8 +179,8 @@ http://localhost:5000/api
   "token": "jwt_token_here",
   "user": {
     "id": "user_id",
-    "name": "Admin Name",
-    "email": "admin@nextech.com"
+    "name": "user Name",
+    "email": "user@nextech.com"
   }
 }
 ```
@@ -246,25 +240,6 @@ http://localhost:5000/api
 ]
 ```
 
-#### Create Job (Admin Only)
-- **Endpoint:** `POST /api/jobs`
-- **Description:** Create a new job posting
-- **Access:** Private (Requires JWT token)
-- **Headers:**
-```
-Authorization: Bearer <jwt_token>
-```
-- **Request Body:**
-```json
-{
-  "title": "Backend Developer",
-  "department": "Engineering",
-  "location": "Bangalore",
-  "experience": "1-3 Years",
-  "description": "Job description here",
-  "isActive": true
-}
-```
 
 ### Application APIs
 
@@ -387,7 +362,7 @@ Each service includes:
 - Docker
 
 ### 5. Careers
-- Job listings (fetched from API)
+- Job listings
 - Apply button for each job
 - Application form modal
 
